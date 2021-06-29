@@ -50,7 +50,7 @@ section h1 > a:hover {
     transition: background 0.5s ease;*/
 }
 
-/*
+
 section h2,
 section h2 > a {
     position: absolute;
@@ -64,6 +64,8 @@ section h2 > a {
 section h2,
 section h2 > a:hover {
     color: black; 
+    transition: color 0.5s ease-in-out;
+/*
     background: url(night.jpg) 50% 50%; 
     background-size: cover; 
     -webkit-text-fill-color: transparent; 
