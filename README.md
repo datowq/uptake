@@ -1,6 +1,2 @@
 # uptake
-personal website
-
-...
-
-that's about it 
+white oak official webpage
