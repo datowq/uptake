@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+*::selection { background: transparent; }
+
+body {
+    background: rgb(255, 255, 255);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+section {
+    position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.centered {
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.btn {
+    -webkit-align-items: center;
+	-webkit-background-clip: padding-box;
+	-webkit-justify-content: center;
+	align-items: center;
+	background-clip: padding-box;
+	background-color: transparent;
+	border: 3px solid rgb(0, 0, 0);
+	color: rgb(0, 0, 0);
+	font-size: 2em;
+	font-weight: 500;
+	justify-content: center;
+	padding: 50px 55px;
+    transform: rotate(45deg);
+}
+
+.btn:hover {
+    color: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    cursor: pointer;
+    animation: textflicker 0.05s infinite alternate;
+}
+
+.btn:active {
+    cursor: default;
+}
+
+.btn2 {
+    -webkit-align-items: center;
+	-webkit-background-clip: padding-box;
+	-webkit-justify-content: center;
+	align-items: center;
+	background-clip: padding-box;
+	background-color: transparent;
+	border: 3px solid rgb(0, 0, 0);
+	color: rgb(0, 0, 0);
+	font-size: 2em;
+	font-weight: 500;
+	justify-content: center;
+	padding: 1em;
+    transform: rotate(45deg);
+}
+
+#particles-js { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 100%;}
+}
+
+/*
+@keyframes rotate {
+    0% {transform: rotate(45deg);}
+    100% {transform: rotate(-135deg);}
+}
+*/
+
+@keyframes textflicker {
+    from {
+      text-shadow: 2px 0 0 #ff0707, -2px 0 0 #1d98fc;
+      box-shadow: 2.25px 0 0 #ff0707, -2.25px 0 0 #1d98fc;
+    }
+    to {
+      text-shadow: 2px 0.5px 2px #ff0707, -2px -0.5px 2px #1d98fc;
+      box-shadow: 3px 0 0 #ff0707, -3px 0 0 #1d98fc;
+    }
+  }
