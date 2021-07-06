@@ -4,6 +4,7 @@
     padding: 0;
     white-space: nowrap;
     text-decoration: none;
+    cursor: default;
 }
 
 *::selection { background: transparent; }
@@ -55,7 +56,7 @@ section {
 }
 
 .btn:active {
-    cursor: default;
+    background: rgba(0, 0, 0, 0.329);
 }
 
 .btn2 {
