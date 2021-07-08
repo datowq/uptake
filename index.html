@@ -1,23 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html  lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>star</title>
+        <title>white oak</title>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Cache-control" content="public">
+        <link preload rel="preconnect" href="https://fonts.googleapis.com">
+        <link preload rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link preload href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">   
         <link preload rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link preload rel="stylesheet" href="style.css">
+        <link rel="icon" href="oak.ico">
+        <script defer src="js/click-on-enter.js"></script>
     </head>
 
-    <body id="bg">
+    <body>
+
         <div id="particles-js"></div>
-        <script src="particles.js"></script>
-        <script src="particlemaker.js"></script>
+        <script src="js/particles.js"></script>
+        <script src="js/particlemaker.js"></script>
 
         <section>
-            
-            <button class="btn2" id="disappear1"></button>
-            <a class="btn"  href="title.html"><i class="fa fa-close"></i></a>
-            <button class="btn2" id="disappear2"></button>
+            <button class="btn2" id="bluestripe"></button>
+            <!--a class="title" id="white">WHITE</a-->
+            <a class="btn" id="centered-button" href="title.html">O</a>
+            <a id="btnin">[ENTER]</a>
+            <!--a class="title" id="oak">OAK</a-->
+            <button class="btn2" id="redstripe"></button>
+
+            <div>
+                <a class="footer" id="ft" href="#patchnotesWrapper">ホワイトオーク v.0.1</a>
+            </div>
+
         </section>
+
+        <div id="patchnotesWrapper">
+            <div id="patchnotes">
+                <div class="tip"><a class="closer" href="#">click here to close</a></div>
+                <div class="releases">
+                    <div class="release">
+                        <div class="title">v.0.1</div>
+                        <div class="date">8 July 2021</div>
+                        <div class="body">
+                            foundational commit
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>

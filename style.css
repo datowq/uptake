@@ -1,84 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
 * {
     margin: 0;
     border: 0;
     padding: 0;
     white-space: nowrap;
     text-decoration: none;
+    box-sizing: border-box;
     cursor: default;
+    z-index: 0;
+    -webkit-user-drag: none;
+    color: #000;
 }
 
 *::selection { background: transparent; }
 
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-corner {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+    transition: .25s;
+}
+
+::-webkit-scrollbar-track {
+    background: 0 0;
+}
+
 body {
     background: rgb(255, 255, 255);
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn 3s ease-in-out;
+    min-height: 100vh;
+}
+
+div {
+    display: block;
 }
 
 section {
     position: relative;
+    font-family: 'Archivo Black';
 	width: 100%;
 	height: 100vh;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.centered {
+#patchnotesWrapper {
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.753);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    padding: 4rem;
+    font-family: 'Roboto Mono';
+}
+
+#patchnotesWrapper:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+#patchnotesWrapper #patchnotes {
+    width: 60vw;
+    height: 100%;
+    background: white;
+    overflow-x: hidden;
+    padding: 2rem;
+    display: grid auto;
+    border-radius: 5px;
+    row-gap: 1rem;
+    overflow-y: scroll;
+} 
+
+#patchnotesWrapper #patchnotes .tip {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.closer:hover {
+    color: #c72d2d;
+    cursor: pointer;
+}
+
+.closer:active {
+    color: black;
+    cursor: default;
+}
+
+#patchnotesWrapper #patchnotes .releases {
+    display: grid;
+    row-gap: 1.2rem;
+}
+
+#patchnotesWrapper #patchnotes .releases .release {
+    display: grid;
+    row-gap: 0.5rem;
+    grid-template-areas:
+        "title date"
+        "body body";
+}
+
+#patchnotesWrapper #patchnotes .releases .release .title {
+    grid-area: title;
+    font-size: 2rem;
+}
+
+#patchnotesWrapper #patchnotes .releases .release .date {
+    grid-area: date;
+    font-size: 1rem;
+    text-align: right;
+    align-self: center;
+}
+
+#patchnotesWrapper #patchnotes .releases .release .body {
+    grid-area: body;
+    overflow-wrap: break-word;
+}
+
+/*
+.title {
     position: absolute;
+    text-align: center;
+    justify-content: center;
 	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+    left:50.17%;
+    transform: translate(-50%, -50%);
+    font-size: 20vw;
+    color: rgba(163, 163, 163, 0.151);
+    z-index: -3;
+    text-indent: 4vw;
+    letter-spacing: 4vw;
+}
+
+#white {top: 20vh;}
+#oak {top: 78vh;}
+*/
+
+.footer {
+    position: absolute;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.205);
+    bottom: 2%;
+    right: 2%;
+}
+
+.footer:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.footer:active {
+    color: rgba(0, 0, 0, 0.205);
+    cursor: default;
 }
 
 .btn {
-    -webkit-align-items: center;
-	-webkit-background-clip: padding-box;
-	-webkit-justify-content: center;
 	align-items: center;
 	background-clip: padding-box;
 	background-color: transparent;
 	border: 3px solid rgb(0, 0, 0);
-	color: rgb(0, 0, 0);
+	color: transparent;
 	font-size: 2em;
-	font-weight: 500;
 	justify-content: center;
-	padding: 50px 55px;
+	padding: 50px 54px;
     transform: rotate(45deg);
+    z-index: 3;
+    transition: background-color 0.2s ease-in-out;
+    transition: border 0.2s ease;
+}
+
+#btnin {
+    position: absolute; 
+    z-index: 3; 
+    font-size: 1.5em;
+    pointer-events: none;
 }
 
 .btn:hover {
-    color: rgb(255, 255, 255);
     background: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
     cursor: pointer;
     animation: textflicker 0.05s infinite alternate;
 }
 
+.btn:hover ~ #btnin {color: white;}
+
 .btn:active {
     background: rgba(0, 0, 0, 0.329);
+    cursor: default;
+    animation: textflicker 0.05s infinite alternate;
 }
 
+.btn:active ~ #btnin {color: white;}
+
 .btn2 {
-    -webkit-align-items: center;
-	-webkit-background-clip: padding-box;
-	-webkit-justify-content: center;
-	align-items: center;
 	background-clip: padding-box;
 	background-color: transparent;
 	border: 3px solid rgb(0, 0, 0);
-	color: rgb(0, 0, 0);
 	font-size: 2em;
-	font-weight: 500;
-	justify-content: center;
 	padding: 1em;
     transform: rotate(45deg);
+    z-index: 2;
 }
+
+#bluestripe {background-image: repeating-linear-gradient(45deg, rgba(18, 128, 253, 0.6), rgba(18, 128, 253, 0.6) 2px, transparent 2px, transparent 5px);}
+
+#redstripe {background-image: repeating-linear-gradient(45deg, rgba(206, 48, 48, 0.6), rgba(206, 48, 48, 0.6) 2px, transparent 2px, transparent 5px);}
 
 #particles-js { 
     position: absolute; 
     width: 100%; 
     height: 100%; 
+    z-index: -2;
 }
 
 @keyframes fadeIn {
@@ -86,20 +233,11 @@ section {
     100% {opacity: 100%;}
 }
 
-/*
-@keyframes rotate {
-    0% {transform: rotate(45deg);}
-    100% {transform: rotate(-135deg);}
-}
-*/
-
 @keyframes textflicker {
     from {
-      text-shadow: 2px 0 0 #ff0707, -2px 0 0 #1d98fc;
       box-shadow: 2.25px 0 0 #ff0707, -2.25px 0 0 #1d98fc;
     }
     to {
-      text-shadow: 2px 0.5px 2px #ff0707, -2px -0.5px 2px #1d98fc;
       box-shadow: 3px 0 0 #ff0707, -3px 0 0 #1d98fc;
     }
   }

@@ -26,6 +26,7 @@ section {
     font-family: "Fira Mono";
     color: white;
     font-size: 4em;
+    pointer-events: none;
 }
 
 .fade {
@@ -38,6 +39,7 @@ section {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+    
 }
 
 #particles-js { 
