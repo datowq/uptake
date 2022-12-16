@@ -55,9 +55,9 @@ img {
 }
 
 body {
-    background-color: #E5E9F5;
+    background-color: #2B2D42;
     font-family: 'Lulo Clean', 'Montserrat';
-    color: #000000;
+    color: #EF233C;
     font-size: 16px;
     width: 100%;
 }
@@ -90,14 +90,14 @@ nav .container a {
     display: block;
     margin: 0;
     line-height: 1;
-    color: #000000;
+    color: #8D99AE;
     letter-spacing: 0px;
     white-space: nowrap;
     transition: color .5s cubic-bezier(.455,.03,.515,.955);
 }
 
 nav .container a:hover {
-    color: #D12C22;
+    color: #EF233C;
     letter-spacing: 3px;
 }
 
@@ -129,6 +129,7 @@ nav .spacer {
 
 h1 {
     font-family: 'Lulo Clean';
+    color: #EF233C;
     font-size: 6vw;
     white-space: nowrap;
     position: absolute;
@@ -185,7 +186,7 @@ h1 .right {
 }
 
 footer {
-    color: #000000;
+    color: #8D99AE;
     position: absolute;
     font-family: 'Montserrat';
     width: 100%;
@@ -201,12 +202,12 @@ footer {
 }
 
 .socials a, .socials a:visited {
-    color: #000000;
+    color: #8D99AE;
     display: block;
     margin: 0 50px 50px 50px;
     transition: color .4s cubic-bezier(.215,.61,.355,1);
 }
 
 .socials a:hover {
-    color: #f02318;
+    color: #EF233C;
 }
